@@ -19,15 +19,19 @@ function init() {
   h = canvas.height;
 
   canvas.addEventListener("mousemove", function (e) {
+    e.preventDefault();
     findxy('move', e)
   }, false);
   canvas.addEventListener("mousedown", function (e) {
+    e.preventDefault();
     findxy('down', e)
   }, false);
   canvas.addEventListener("mouseup", function (e) {
+    e.preventDefault();
     findxy('up', e)
   }, false);
   canvas.addEventListener("mouseout", function (e) {
+    e.preventDefault();
     findxy('out', e)
   }, false);
 
