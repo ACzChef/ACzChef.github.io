@@ -1,0 +1,23 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <canvas id="canvas" width="250" height="250" style="position:absolute;top:10%;left:10%;border:2px solid;"></canvas>
+    <canvas id="display" width="250" height="250" style="position:absolute;top:10%;right:10%;border:2px solid;"></canvas>
+    <button type="button" onClick="save()">save</button>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAOQbzywYmlIoeOTJSTZVQU7X2F1Nh4nTA",
+        authDomain: "pict-proto.firebaseapp.com",
+        databaseURL: "https://pict-proto.firebaseio.com",
+        projectId: "pict-proto",
+        storageBucket: "pict-proto.appspot.com",
+        messagingSenderId: "868542628348"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="index.js"></script>
+</html>
