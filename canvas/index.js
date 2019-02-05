@@ -18,6 +18,24 @@ function init() {
   w = canvas.width;
   h = canvas.height;
 
+  // Prevent scrolling when touching the canvas
+  document.body.addEventListener("touchstart", function (e) {
+    if (e.target == canvas) {
+      e.preventDefault();
+    }
+  }, false);
+  document.body.addEventListener("touchend", function (e) {
+    if (e.target == canvas) {
+      e.preventDefault();
+    }
+  }, false);
+  document.body.addEventListener("touchmove", function (e) {
+    if (e.target == canvas) {
+      e.preventDefault();
+    }
+  }, false);
+
+
   canvas.addEventListener("mousemove", function (e) {
     e.preventDefault();
     findxy('move', e)
@@ -37,7 +55,6 @@ function init() {
 
   // Set up touch events for mobile, etc
   canvas.addEventListener("touchstart", function (e) {
-    e.preventDefault();
     mousePos = getTouchPos(canvas, e);
     var touch = e.touches[0];
     var mouseEvent = new MouseEvent("mousedown", {
@@ -47,12 +64,10 @@ function init() {
     canvas.dispatchEvent(mouseEvent);
   }, false);
   canvas.addEventListener("touchend", function (e) {
-    e.preventDefault();
     var mouseEvent = new MouseEvent("mouseup", {});
     canvas.dispatchEvent(mouseEvent);
   }, false);
   canvas.addEventListener("touchmove", function (e) {
-    e.preventDefault();
     var touch = e.touches[0];
     var mouseEvent = new MouseEvent("mousemove", {
       clientX: touch.clientX,
