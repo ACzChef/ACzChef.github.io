@@ -1,3 +1,3 @@
 ##README
 
-[Link to site](http://CBGallarno.github.io)
+[chrisgallarno.dev](http://CBGallarno.github.io)
